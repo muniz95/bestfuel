@@ -4,7 +4,6 @@
   "description": "Vai de álcool ou gasolina?",
   "lang": "en-US",
   "start_url": "/calculaflex-dart",
-  "scope": "/calculaflex-dart",
   "display": "standalone",
   "orientation": "any",
   "theme_color": "#01454f",
