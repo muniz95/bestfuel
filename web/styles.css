@@ -2,30 +2,16 @@
   text-align: center;
   font-size: 3em;
   display: -ms-flexbox;
-  display: flex
-}
-
-.result-alcohol {
-  width: 100%;
-  background-color: green;
-  color: #fff
-}
-
-.result-gasoline {
-  background-color: red;
-  color: #fff
-}
-
-.result-false {
+  display: flex;
   float: left;
-  width: 50%;
-  color: gray;
-  background-color: #000
+  width: 100%;
+  color: white;
+  background-color: #000;
+  justify-content: space-around;
 }
 
-.result-true {
-  float: right;
-  width: 50%
+.result div {
+  width: 100%;
 }
 
 .App {
@@ -36,7 +22,6 @@
   background-color: #01454f;
   height: 35px;
   margin: 50px;
-  color: #3d464d
 }
 
 .group {
@@ -64,10 +49,11 @@ code {
   color: #e73a37
 }
 
-body {
+html, body {
   background-color: #01454f;
   margin: 0;
   padding: 0;
+  height: 100%;
   font-family: Open Sans, lucida grande, Segoe UI, arial, verdana, lucida sans unicode, tahoma, sans-serif
 }
 

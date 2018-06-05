@@ -8,7 +8,7 @@
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#01454f">
   <meta name="scaffolded-by" content="https://github.com/google/stagehand">
-  <title>calculaflex_dart</title>
+  <title>Calculaflex</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.ico">
   <script defer src="main.dart" type="application/dart"></script>
@@ -20,20 +20,20 @@
     <div class="App">
       <div class="header">
         <div class="result">
-          <div class="result-alcohol result-false">A</div>
-          <div class="result-gasoline result-false">G</div>
+          <div id="result-alcohol">A</div>
+          <div id="result-gasoline">G</div>
         </div>
       </div>
       <p class="group">
         <label for="alcohol">Preço do álcool</label>
         <br>
-        <input id="alcohol" class="input" type="number">
+        <input id="alcohol" class="input" type="text">
         <br>
       </p>
       <p class="group">
         <label for="gasoline">Preço da gasolina</label>
         <br>
-        <input id="gasoline" step="0.01" class="input" type="number">
+        <input id="gasoline" step="0.01" class="input" type="text">
         <br>
       </p>
       <p class="group">
