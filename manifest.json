@@ -1,15 +1,15 @@
 {
   "name": "Calculaflex",
   "short_name": "Calculaflex",
-  "description": "An absolute bare-bones web app.",
+  "description": "Vai de álcool ou gasolina?",
   "lang": "en-US",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "/calculaflex-dart",
+  "scope": "/calculaflex-dart",
   "display": "standalone",
   "orientation": "any",
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "__mock_values__icons": [
+  "theme_color": "#01454f",
+  "background_color": "#01454f",
+  "icons": [
     {
       "src": "img/128.png",
       "sizes": "128x128",
