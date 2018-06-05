@@ -1,29 +1,29 @@
-.Result {
+.result {
   text-align: center;
   font-size: 3em;
   display: -ms-flexbox;
   display: flex
 }
 
-.Result-alcohol {
+.result-alcohol {
   width: 100%;
   background-color: green;
   color: #fff
 }
 
-.Result-gasoline {
+.result-gasoline {
   background-color: red;
   color: #fff
 }
 
-.Result-false {
+.result-false {
   float: left;
   width: 50%;
   color: gray;
   background-color: #000
 }
 
-.Result-true {
+.result-true {
   float: right;
   width: 50%
 }
@@ -32,23 +32,23 @@
   text-align: center
 }
 
-.App-header {
+.header {
   background-color: #01454f;
   height: 35px;
   margin: 50px;
   color: #3d464d
 }
 
-.App-group {
+.group {
   color: #fff;
   font-size: large
 }
 
-.App-input {
+.input {
   height: 35px
 }
 
-.App-input,
+.input,
 button {
   font-size: 20px;
   width: 80%
