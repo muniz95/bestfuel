@@ -5389,7 +5389,7 @@ k:function(a){return this.a.href}}}],["","",,K,{"^":"",
 kk:[function(a,b){return $.$get$Q().cs(0,a,b)},function(a){return K.kk(a,null)},"$2","$1","eA",2,2,30,2,0,23]}],["","",,N,{"^":"",
 of:[function(){var z=new X.iC(new X.fy([]),null,!0,!0,null,null,null)
 z.b=$.$get$es()
-P.bx("Running PWA, version: 2018-06-05T15:00:42.000Z")
+P.bx("Running PWA, version: 2018-06-05T20:12:56.000Z")
 X.jX(z)},"$0","ev",0,0,2]},1]]
 setupProgram(dart,0)
 J.p=function(a){if(typeof a=="number"){if(Math.floor(a)==a)return J.dd.prototype
@@ -5548,7 +5548,7 @@ try{(void 0).$method$($argumentsExpr$)}catch(z){return z.message}}())},"dG","$ge
 z=P.b0
 y=new P.K(0,P.iE(),null,[z])
 y.d6(null,z)
-return y},"b9","$get$b9",function(){return[]},"es","$get$es",function(){return["./","./favicon.ico","./main.dart.js","./manifest.json","./packages/browser/dart.js","./packages/browser/interop.js","./packages/front_end/src/fasta/TESTING.md","./packages/front_end/src/fasta/diagnostics.md","./styles.css"]},"e4","$get$e4",function(){return["https://fonts.google.com/","https://fonts.googleapis.com/","https://fonts.gstatic.com/"]},"dx","$get$dx",function(){return new L.i3(self.self,null,null,null,null,null,null,null,null,null,null,null)},"Q","$get$Q",function(){return $.$get$dx()}])
+return y},"b9","$get$b9",function(){return[]},"es","$get$es",function(){return["./","./favicon.ico","./img/128.png","./img/144.png","./img/192.png","./img/256.png","./img/512.png","./main.dart.js","./manifest.json","./packages/browser/dart.js","./packages/browser/interop.js","./packages/front_end/src/fasta/TESTING.md","./packages/front_end/src/fasta/diagnostics.md","./styles.css"]},"e4","$get$e4",function(){return["https://fonts.google.com/","https://fonts.googleapis.com/","https://fonts.gstatic.com/"]},"dx","$get$dx",function(){return new L.i3(self.self,null,null,null,null,null,null,null,null,null,null,null)},"Q","$get$Q",function(){return $.$get$dx()}])
 I=I.$finishIsolateConstructor(I)
 $=new I()
 init.metadata=["request","error",null,"event","stackTrace","value","result","_","e","x","data","invocation","each","object","arg3","arg2","sender","arg4","errorCode","arg1","element","numberOfArguments","arg","requestInit","b","permissions","key","closure","response","a","resolveFn","rejectFn","item","callback","arguments","isolate"]
