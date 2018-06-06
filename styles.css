@@ -1,27 +1,41 @@
-.result {
+.panel {
+  width: 50%;
+}
+
+.results {
   text-align: center;
   font-size: 3em;
-  display: -ms-flexbox;
   display: flex;
   float: left;
   width: 100%;
   color: white;
   background-color: #000;
   justify-content: space-around;
+  border-radius: 5px;
 }
 
-.result div {
+.results div {
   width: 100%;
+  transition-duration: 500ms;
 }
 
-#app {
-  text-align: center
+#result-alcohol {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
-.header {
+#result-gasoline {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+#header {
   background-color: #01454f;
-  height: 35px;
-  margin: 50px;
+  height: 35%;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .group {
@@ -29,14 +43,9 @@
   font-size: large
 }
 
-.input {
-  height: 35px
-}
-
 .input,
 button {
   font-size: 20px;
-  width: 80%
 }
 
 button {
@@ -45,25 +54,31 @@ button {
   height: 50px
 }
 
-code {
-  color: #e73a37
-}
-
 html, body {
   background-color: #01454f;
   margin: 0;
   padding: 0;
-  height: 100%;
   font-family: Open Sans, lucida grande, Segoe UI, arial, verdana, lucida sans unicode, tahoma, sans-serif
+}
+
+body {
+  height: 100%;
+}
+
+#container {
+  height: 65%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
 }
 
 footer {
   text-align: center;
   color: #fff;
   width: 100%;
-  bottom: 1;
-  padding-bottom: 10px;
-  position: relative
+  height: 10%;
+  display: flex;
 }
 
 footer a:active {
