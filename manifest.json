@@ -1,9 +1,9 @@
 {
-  "name": "Calculaflex",
-  "short_name": "Calculaflex",
+  "name": "BestFuel",
+  "short_name": "BestFuel",
   "description": "Vai de álcool ou gasolina?",
   "lang": "en-US",
-  "start_url": "/calculaflex-dart",
+  "start_url": "/bestfuel",
   "display": "standalone",
   "orientation": "any",
   "theme_color": "#01454f",

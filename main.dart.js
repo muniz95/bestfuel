@@ -4182,7 +4182,7 @@ m:{
 fT:function(a){if(a==null)return
 return new L.fN(a,null,null,null)}}}}],["","",,O,{}],["","",,F,{"^":"",
 lN:[function(){if(window.location.hostname==="localhost")U.d6("./pwa.dart.js")
-else U.d6("/calculaflex-dart/pwa.dart.js")
+else U.d6("/bestfuel/pwa.dart.js")
 var z=J.dV(document.getElementById("calculate"))
 W.da(z.a,z.b,new F.iQ(),!1,H.aq(z,0))},"$0","dE",0,0,2],
 iQ:{"^":"h:18;",
