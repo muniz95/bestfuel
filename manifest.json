@@ -4,8 +4,8 @@
   "description": "Vai de álcool ou gasolina?",
   "lang": "en-US",
   "start_url": "/bestfuel",
+  "scope": "/bestfuel",
   "display": "standalone",
-  "orientation": "any",
   "theme_color": "#01454f",
   "background_color": "#01454f",
   "icons": [
