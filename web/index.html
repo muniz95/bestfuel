@@ -1,29 +1,30 @@
 <!DOCTYPE html>
+<html>
+  <head>
+    <link rel="manifest" href="/bestfuel/manifest.json">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#01454f">
+    <meta name="scaffolded-by" content="https://github.com/google/stagehand">
+    <title>BestFuel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
+    <script defer src="main.dart" type="application/dart"></script>
+    <script defer src="packages/browser/dart.js"></script>
+    <base href="/bestfuel">
+  </head>
 
-</html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#01454f">
-  <meta name="scaffolded-by" content="https://github.com/google/stagehand">
-  <title>Calculaflex</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="favicon.ico">
-  <script defer src="main.dart" type="application/dart"></script>
-  <script defer src="packages/browser/dart.js"></script>
-</head>
-
-<body cz-shortcut-listen="true">
-  <div id="app">
-    <div class="App">
-      <div class="header">
-        <div class="result">
+  <body>
+    <div id="header">
+      <div class="panel">
+        <div class="results">
           <div id="result-alcohol">A</div>
           <div id="result-gasoline">G</div>
         </div>
       </div>
+    </div>
+    <div id="container">
       <p class="group">
         <label for="alcohol">Preço do álcool</label>
         <br>
@@ -40,11 +41,6 @@
         <button id="calculate">Calcular</button>
       </p>
     </div>
-  </div>
+  </body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
-  <footer>
-    <p class="copyright text-muted">Copyright
-      <a target="_blank" href="https://muniz95.github.io/">Rodrigo Muniz</a>
-    </p>
-  </footer>
-</body>
+</html>

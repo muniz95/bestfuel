@@ -5,7 +5,7 @@ void main() {
   if (window.location.hostname == 'localhost') {
     new pwa.Client();
   } else {
-    new pwa.Client(scriptUrl: '/calculaflex-dart/pwa.dart.js');
+    new pwa.Client(scriptUrl: '/bestfuel/pwa.dart.js');
   }
 
   HtmlElement btnCalculate = document.getElementById('calculate');

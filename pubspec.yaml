@@ -1,8 +1,8 @@
-name: calculaflex_dart
-description: An absolute bare-bones web app.
+name: bestfuel
+description: A simple calculator to give the best choice of fuel.
 version: 0.0.1
-#homepage: https://www.example.com
-#author: Rodrigo Muniz <email@example.com>
+homepage: https://muniz95.github.io/bestfuel
+author: Rodrigo Muniz <email@example.com>
 
 environment:
   sdk: '>=1.20.1 <2.0.0'
@@ -19,6 +19,6 @@ transformers:
 
 # Uncomment the following in sdk 1.24+ to make pub serve
 # use dartdevc (webdev.dartlang.org/tools/dartdevc).
-#web:
-#  compiler:
-#    debug: dartdevc
+web:
+  compiler:
+    debug: dartdevc

@@ -1,5 +1,5 @@
 import 'package:pwa/worker.dart';
-import 'package:calculaflex_dart/pwa/offline_urls.g.dart' as offline;
+import 'package:bestfuel/pwa/offline_urls.g.dart' as offline;
 
 /// The Progressive Web Application's entry point.
 void main() {

@@ -1,6 +1,5 @@
-# calculaflex_dart
+# BestFuel
 
-An absolute bare-bones web app.
+A simple application to show the best choice of fuel (ethanol or gasoline), 
+based on a more simple formula. I made this app as a study project of Dart and PWAs.
 
-Created from templates made available by Stagehand under a BSD-style
-[license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).
