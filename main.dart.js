@@ -4230,15 +4230,19 @@ z=document
 y=z.getElementById("alcohol")
 x=z.getElementById("gasoline")
 w=J.c8(y)
-W.bk(w.a,w.b,new F.j0(),!1,H.T(w,0))
+W.bk(w.a,w.b,new F.j0(y),!1,H.T(w,0))
 w=J.c8(x)
-W.bk(w.a,w.b,new F.j1(),!1,H.T(w,0))
+W.bk(w.a,w.b,new F.j1(x),!1,H.T(w,0))
 z=J.e_(z.getElementById("calculate"))
 W.bk(z.a,z.b,new F.j2(y,x),!1,H.T(z,0))},"$0","dJ",0,0,2],
-j0:{"^":"h:4;",
-$1:function(a){document.getElementById("alcoholPrice").textContent="R$ "+J.cd(H.dF(J.ca(a),"$iscR").valueAsNumber,2)}},
-j1:{"^":"h:4;",
-$1:function(a){document.getElementById("gasolinePrice").textContent="R$ "+J.cd(H.dF(J.ca(a),"$iscR").valueAsNumber,2)}},
+j0:{"^":"h:4;a",
+$1:function(a){var z="R$ "+J.cd(H.dF(J.ca(a),"$iscR").valueAsNumber,2)
+document.getElementById("alcoholPrice").textContent=z
+this.a.setAttribute("tooltip",z)}},
+j1:{"^":"h:4;a",
+$1:function(a){var z="R$ "+J.cd(H.dF(J.ca(a),"$iscR").valueAsNumber,2)
+document.getElementById("gasolinePrice").textContent=z
+this.a.setAttribute("tooltip",z)}},
 j2:{"^":"h:4;a,b",
 $1:function(a){var z,y,x
 z=this.a

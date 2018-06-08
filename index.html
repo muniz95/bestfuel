@@ -23,28 +23,16 @@
       </div>
     </div>
     <div id="container">
+      <label for="alcohol">Preço do álcool</label>
       <p class="group">
-          <label for="alcohol">Preço do álcool</label>
-          <input id="alcohol" class="slider alcohol" type="range" max="9.99" step="0.01" value="2.89">
+        <input id="alcohol" name="alcohol" class="slider alcohol" tooltip="2.89" type="range" max="9.99" step="0.01" value="2.89">
       </p>
       <p id="alcoholPrice" class="group">R$ 2.89</p>
+      <label for="gasoline">Preço da gasolina</label>
       <p class="group">
-        <label for="gasoline">Preço da gasolina</label>
-        <input id="gasoline" class="slider gasoline" type="range" max="9.99" step="0.01" value="4.49">
+        <input id="gasoline" name="gasoline" class="slider gasoline" tooltip="4.49" type="range" max="9.99" step="0.01" value="4.49">
       </p>
       <p id="gasolinePrice" class="group">R$ 4.49</p>
-      <!-- <p class="group">
-        <label for="alcohol">Preço do álcool</label>
-        <br>
-        <input id="alcohol" class="input" type="text">
-        <br>
-      </p>
-      <p class="group">
-        <label for="gasoline">Preço da gasolina</label>
-        <br>
-        <input id="gasoline" step="0.01" class="input" type="text">
-        <br>
-      </p> -->
       <p class="group">
         <button id="calculate">Calcular</button>
       </p>
