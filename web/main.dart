@@ -2,29 +2,39 @@ import 'dart:html';
 import 'package:pwa/client.dart' as pwa;
 
 void main() {
-  if (window.location.hostname == 'localhost') {
-    new pwa.Client();
-  } else {
+  if (window.location.hostname != 'localhost') {
     new pwa.Client(scriptUrl: '/bestfuel/pwa.dart.js');
   }
 
+  RangeInputElement rngAlcohol = document.getElementById('alcohol');
+  RangeInputElement rngGasoline = document.getElementById('gasoline');
+
+  rngAlcohol.onInput.listen((Event e) {
+    String price = 'R\$ ${(e.target as RangeInputElement).valueAsNumber.toStringAsFixed(2)}';
+    document.getElementById('alcoholPrice').text = price;
+    rngAlcohol.attributes['tooltip'] = price;
+  });
+  rngGasoline.onInput.listen((Event e) {
+    String price = 'R\$ ${(e.target as RangeInputElement).valueAsNumber.toStringAsFixed(2)}';
+    document.getElementById('gasolinePrice').text = price;
+    rngGasoline.attributes['tooltip'] = price;
+  });
+
   HtmlElement btnCalculate = document.getElementById('calculate');
   btnCalculate.onClick.listen((Event e) {
-    InputElement txtAlcohol = document.getElementById('alcohol');
-    InputElement txtGasoline = document.getElementById('gasoline');
 
     double alcohol;
-    if (txtAlcohol.value.contains(',')){
-      alcohol = double.parse(txtAlcohol.value.split(',').join('.'));
+    if (rngAlcohol.value.contains(',')){
+      alcohol = double.parse(rngAlcohol.value.split(',').join('.'));
     } else {
-      alcohol = double.parse(txtAlcohol.value);
+      alcohol = double.parse(rngAlcohol.value);
     }
     
     double gasoline;
-    if (txtGasoline.value.contains(',')){
-      gasoline = double.parse(txtGasoline.value.split(',').join('.'));
+    if (rngGasoline.value.contains(',')){
+      gasoline = double.parse(rngGasoline.value.split(',').join('.'));
     } else {
-      gasoline = double.parse(txtGasoline.value);
+      gasoline = double.parse(rngGasoline.value);
     }
 
     calculate(alcohol, gasoline);
