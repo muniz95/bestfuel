@@ -1720,8 +1720,8 @@ z["-"+v]=s
 z["+"+v]=s
 z["*"+v]=s}}},
 kq:function(){var z,y,x,w,v,u,t
-z=C.q()
-z=H.aN(C.r,H.aN(C.t,H.aN(C.h,H.aN(C.h,H.aN(C.v,H.aN(C.u,H.aN(C.w(C.i),z)))))))
+z=C.u()
+z=H.aN(C.q,H.aN(C.w,H.aN(C.h,H.aN(C.h,H.aN(C.v,H.aN(C.r,H.aN(C.t(C.i),z)))))))
 if(typeof dartNativeDispatchHooksTransformer!="undefined"){y=dartNativeDispatchHooksTransformer
 if(typeof y=="function")y=[y]
 if(y.constructor==Array)for(x=0;x<y.length;++x){w=y[x]
@@ -5389,7 +5389,7 @@ k:function(a){return this.a.href}}}],["","",,K,{"^":"",
 kk:[function(a,b){return $.$get$Q().cs(0,a,b)},function(a){return K.kk(a,null)},"$2","$1","eA",2,2,30,2,0,23]}],["","",,N,{"^":"",
 of:[function(){var z=new X.iC(new X.fy([]),null,!0,!0,null,null,null)
 z.b=$.$get$es()
-P.bx("Running PWA, version: 2018-06-08T18:31:15.000Z")
+P.bx("Running PWA, version: 2018-06-10T04:49:49.475Z")
 X.jX(z)},"$0","ev",0,0,2]},1]]
 setupProgram(dart,0)
 J.p=function(a){if(typeof a=="number"){if(Math.floor(a)==a)return J.dd.prototype
@@ -5496,14 +5496,126 @@ C.m=new P.iT()
 C.b=new P.ju()
 C.f=new P.ah(0)
 C.n=new P.ah(31536e9)
-C.q=function() {  var toStringFunction = Object.prototype.toString;  function getTag(o) {    var s = toStringFunction.call(o);    return s.substring(8, s.length - 1);  }  function getUnknownTag(object, tag) {    if (/^HTML[A-Z].*Element$/.test(tag)) {      var name = toStringFunction.call(object);      if (name == "[object Object]") return null;      return "HTMLElement";    }  }  function getUnknownTagGenericBrowser(object, tag) {    if (self.HTMLElement && object instanceof HTMLElement) return "HTMLElement";    return getUnknownTag(object, tag);  }  function prototypeForTag(tag) {    if (typeof window == "undefined") return null;    if (typeof window[tag] == "undefined") return null;    var constructor = window[tag];    if (typeof constructor != "function") return null;    return constructor.prototype;  }  function discriminator(tag) { return null; }  var isBrowser = typeof navigator == "object";  return {    getTag: getTag,    getUnknownTag: isBrowser ? getUnknownTagGenericBrowser : getUnknownTag,    prototypeForTag: prototypeForTag,    discriminator: discriminator };}
+C.q=function(hooks) {
+  if (typeof dartExperimentalFixupGetTag != "function") return hooks;
+  hooks.getTag = dartExperimentalFixupGetTag(hooks.getTag);
+}
+C.r=function(hooks) {
+  var userAgent = typeof navigator == "object" ? navigator.userAgent : "";
+  if (userAgent.indexOf("Firefox") == -1) return hooks;
+  var getTag = hooks.getTag;
+  var quickMap = {
+    "BeforeUnloadEvent": "Event",
+    "DataTransfer": "Clipboard",
+    "GeoGeolocation": "Geolocation",
+    "Location": "!Location",
+    "WorkerMessageEvent": "MessageEvent",
+    "XMLDocument": "!Document"};
+  function getTagFirefox(o) {
+    var tag = getTag(o);
+    return quickMap[tag] || tag;
+  }
+  hooks.getTag = getTagFirefox;
+}
 C.h=function(hooks) { return hooks; }
-C.r=function(hooks) {  if (typeof dartExperimentalFixupGetTag != "function") return hooks;  hooks.getTag = dartExperimentalFixupGetTag(hooks.getTag);}
-C.t=function(hooks) {  var getTag = hooks.getTag;  var prototypeForTag = hooks.prototypeForTag;  function getTagFixed(o) {    var tag = getTag(o);    if (tag == "Document") {      // "Document", so we check for the xmlVersion property, which is the empty      if (!!o.xmlVersion) return "!Document";      return "!HTMLDocument";    }    return tag;  }  function prototypeForTagFixed(tag) {    if (tag == "Document") return null;    return prototypeForTag(tag);  }  hooks.getTag = getTagFixed;  hooks.prototypeForTag = prototypeForTagFixed;}
-C.u=function(hooks) {  var userAgent = typeof navigator == "object" ? navigator.userAgent : "";  if (userAgent.indexOf("Firefox") == -1) return hooks;  var getTag = hooks.getTag;  var quickMap = {    "BeforeUnloadEvent": "Event",    "DataTransfer": "Clipboard",    "GeoGeolocation": "Geolocation",    "Location": "!Location",    "WorkerMessageEvent": "MessageEvent",    "XMLDocument": "!Document"};  function getTagFirefox(o) {    var tag = getTag(o);    return quickMap[tag] || tag;  }  hooks.getTag = getTagFirefox;}
-C.i=function getTagFallback(o) {  var s = Object.prototype.toString.call(o);  return s.substring(8, s.length - 1);}
-C.v=function(hooks) {  var userAgent = typeof navigator == "object" ? navigator.userAgent : "";  if (userAgent.indexOf("Trident/") == -1) return hooks;  var getTag = hooks.getTag;  var quickMap = {    "BeforeUnloadEvent": "Event",    "DataTransfer": "Clipboard",    "HTMLDDElement": "HTMLElement",    "HTMLDTElement": "HTMLElement",    "HTMLPhraseElement": "HTMLElement",    "Position": "Geoposition"  };  function getTagIE(o) {    var tag = getTag(o);    var newTag = quickMap[tag];    if (newTag) return newTag;    if (tag == "Object") {      if (window.DataView && (o instanceof window.DataView)) return "DataView";    }    return tag;  }  function prototypeForTagIE(tag) {    var constructor = window[tag];    if (constructor == null) return null;    return constructor.prototype;  }  hooks.getTag = getTagIE;  hooks.prototypeForTag = prototypeForTagIE;}
-C.w=function(getTagFallback) {  return function(hooks) {    if (typeof navigator != "object") return hooks;    var ua = navigator.userAgent;    if (ua.indexOf("DumpRenderTree") >= 0) return hooks;    if (ua.indexOf("Chrome") >= 0) {      function confirm(p) {        return typeof window == "object" && window[p] && window[p].name == p;      }      if (confirm("Window") && confirm("HTMLElement")) return hooks;    }    hooks.getTag = getTagFallback;  };}
+
+C.t=function(getTagFallback) {
+  return function(hooks) {
+    if (typeof navigator != "object") return hooks;
+    var ua = navigator.userAgent;
+    if (ua.indexOf("DumpRenderTree") >= 0) return hooks;
+    if (ua.indexOf("Chrome") >= 0) {
+      function confirm(p) {
+        return typeof window == "object" && window[p] && window[p].name == p;
+      }
+      if (confirm("Window") && confirm("HTMLElement")) return hooks;
+    }
+    hooks.getTag = getTagFallback;
+  };
+}
+C.u=function() {
+  var toStringFunction = Object.prototype.toString;
+  function getTag(o) {
+    var s = toStringFunction.call(o);
+    return s.substring(8, s.length - 1);
+  }
+  function getUnknownTag(object, tag) {
+    if (/^HTML[A-Z].*Element$/.test(tag)) {
+      var name = toStringFunction.call(object);
+      if (name == "[object Object]") return null;
+      return "HTMLElement";
+    }
+  }
+  function getUnknownTagGenericBrowser(object, tag) {
+    if (self.HTMLElement && object instanceof HTMLElement) return "HTMLElement";
+    return getUnknownTag(object, tag);
+  }
+  function prototypeForTag(tag) {
+    if (typeof window == "undefined") return null;
+    if (typeof window[tag] == "undefined") return null;
+    var constructor = window[tag];
+    if (typeof constructor != "function") return null;
+    return constructor.prototype;
+  }
+  function discriminator(tag) { return null; }
+  var isBrowser = typeof navigator == "object";
+  return {
+    getTag: getTag,
+    getUnknownTag: isBrowser ? getUnknownTagGenericBrowser : getUnknownTag,
+    prototypeForTag: prototypeForTag,
+    discriminator: discriminator };
+}
+C.v=function(hooks) {
+  var userAgent = typeof navigator == "object" ? navigator.userAgent : "";
+  if (userAgent.indexOf("Trident/") == -1) return hooks;
+  var getTag = hooks.getTag;
+  var quickMap = {
+    "BeforeUnloadEvent": "Event",
+    "DataTransfer": "Clipboard",
+    "HTMLDDElement": "HTMLElement",
+    "HTMLDTElement": "HTMLElement",
+    "HTMLPhraseElement": "HTMLElement",
+    "Position": "Geoposition"
+  };
+  function getTagIE(o) {
+    var tag = getTag(o);
+    var newTag = quickMap[tag];
+    if (newTag) return newTag;
+    if (tag == "Object") {
+      if (window.DataView && (o instanceof window.DataView)) return "DataView";
+    }
+    return tag;
+  }
+  function prototypeForTagIE(tag) {
+    var constructor = window[tag];
+    if (constructor == null) return null;
+    return constructor.prototype;
+  }
+  hooks.getTag = getTagIE;
+  hooks.prototypeForTag = prototypeForTagIE;
+}
+C.w=function(hooks) {
+  var getTag = hooks.getTag;
+  var prototypeForTag = hooks.prototypeForTag;
+  function getTagFixed(o) {
+    var tag = getTag(o);
+    if (tag == "Document") {
+      if (!!o.xmlVersion) return "!Document";
+      return "!HTMLDocument";
+    }
+    return tag;
+  }
+  function prototypeForTagFixed(tag) {
+    if (tag == "Document") return null;
+    return prototypeForTag(tag);
+  }
+  hooks.getTag = getTagFixed;
+  hooks.prototypeForTag = prototypeForTagFixed;
+}
+C.i=function getTagFallback(o) {
+  var s = Object.prototype.toString.call(o);
+  return s.substring(8, s.length - 1);
+}
 C.j=I.bW([])
 C.y=H.H(I.bW([]),[P.bo])
 C.k=new H.fg(0,{},C.y,[P.bo,null])
@@ -5548,7 +5660,7 @@ try{(void 0).$method$($argumentsExpr$)}catch(z){return z.message}}())},"dG","$ge
 z=P.b0
 y=new P.K(0,P.iE(),null,[z])
 y.d6(null,z)
-return y},"b9","$get$b9",function(){return[]},"es","$get$es",function(){return["./","./favicon.ico","./img/128.png","./img/144.png","./img/192.png","./img/256.png","./img/512.png","./main.dart.js","./manifest.json","./packages/browser/dart.js","./packages/browser/interop.js","./packages/front_end/src/fasta/TESTING.md","./packages/front_end/src/fasta/diagnostics.md","./styles.css"]},"e4","$get$e4",function(){return["https://fonts.google.com/","https://fonts.googleapis.com/","https://fonts.gstatic.com/"]},"dx","$get$dx",function(){return new L.i3(self.self,null,null,null,null,null,null,null,null,null,null,null)},"Q","$get$Q",function(){return $.$get$dx()}])
+return y},"b9","$get$b9",function(){return[]},"es","$get$es",function(){return["./","./favicon.ico","./img/128.png","./img/144.png","./img/192.png","./img/256.png","./img/512.png","./main.dart.js","./manifest.json","./packages/browser/dart.js","./packages/browser/interop.js","./packages/front_end/src/fasta/TESTING.md","./packages/front_end/src/fasta/diagnostics.md","./packages/kernel/analyzer/readme.md","./packages/kernel/binary/readme.md","./packages/kernel/frontend/readme.md","./packages/kernel/target/readme.md","./packages/kernel/text/readme.md","./styles.css"]},"e4","$get$e4",function(){return["https://fonts.google.com/","https://fonts.googleapis.com/","https://fonts.gstatic.com/"]},"dx","$get$dx",function(){return new L.i3(self.self,null,null,null,null,null,null,null,null,null,null,null)},"Q","$get$Q",function(){return $.$get$dx()}])
 I=I.$finishIsolateConstructor(I)
 $=new I()
 init.metadata=["request","error",null,"event","stackTrace","value","result","_","e","x","data","invocation","each","object","arg3","arg2","sender","arg4","errorCode","arg1","element","numberOfArguments","arg","requestInit","b","permissions","key","closure","response","a","resolveFn","rejectFn","item","callback","arguments","isolate"]
