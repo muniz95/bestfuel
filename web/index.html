@@ -12,6 +12,18 @@
     <link rel="icon" href="favicon.ico">
     <script defer src="main.dart" type="application/dart"></script>
     <script defer src="packages/browser/dart.js"></script>
+    <style>
+      html, body {
+        background-color: #01454f;
+        margin: 0;
+        padding: 0;
+        font-family: Open Sans, lucida grande, Segoe UI, arial, verdana, lucida sans unicode, tahoma, sans-serif
+      }
+
+      body {
+        height: 100%;
+      }
+    </style>
   </head>
 
   <body>
@@ -26,16 +38,12 @@
     <div id="container">
       <label for="alcohol">Preço do álcool</label>
       <p class="group">
-        <input id="alcohol" name="alcohol" class="slider alcohol" tooltip="2.89"
-          type="range" max="9.99" step="0.01" value="2.89" />
+        <input id="alcohol" name="alcohol" type="number" maxlength="5" />
       </p>
-      <p id="alcoholPrice" class="group">R$ 2.89</p>
       <label for="gasoline">Preço da gasolina</label>
       <p class="group">
-        <input id="gasoline" name="gasoline" class="slider gasoline" tooltip="4.49"
-          type="range" max="9.99" step="0.01" value="4.49" />
+        <input id="gasoline" name="gasoline" type="number" maxlength="5" />
       </p>
-      <p id="gasolinePrice" class="group">R$ 4.49</p>
       <p class="group">
         <button id="calculate">Calcular</button>
       </p>
