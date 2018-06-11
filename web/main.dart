@@ -3,7 +3,7 @@ import 'package:pwa/client.dart' as pwa;
 
 void main() {
   if (window.location.hostname != 'localhost') {
-    new pwa.Client(scriptUrl: '/bestfuel/pwa.dart.js');
+    new pwa.Client();
   }
 
   RangeInputElement rngAlcohol = document.getElementById('alcohol');
